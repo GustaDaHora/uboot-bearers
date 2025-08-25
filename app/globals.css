@@ -1,26 +1,51 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-gray-900 via-black to-blue-900 font-mono text-white;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .main-container {
+    @apply rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-gray-900/50 via-black/80 to-blue-900/30 p-8 shadow-2xl shadow-cyan-500/10 backdrop-blur-xl;
+  }
+
+  .info-card {
+    @apply rounded-xl border border-cyan-700/30 bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 transition-all duration-300 hover:border-cyan-500/50;
+  }
+
+  .btn-icon {
+    @apply group rounded-full border border-cyan-500/50 bg-gradient-to-r from-cyan-600/30 to-blue-600/30 p-4 shadow-lg transition-all duration-300 hover:border-cyan-400 hover:from-cyan-500 hover:to-blue-500 hover:shadow-cyan-400/25;
+  }
+
+  .pagination-dot {
+    @apply h-4 w-4 rounded-full transition-all duration-300;
+  }
+
+  .pagination-dot-active {
+    @apply scale-125 bg-cyan-400 shadow-lg shadow-cyan-400/50;
+  }
+
+  .pagination-dot-inactive {
+    @apply bg-gray-600/50 hover:bg-gray-500/70;
+  }
+
+  .section-toggle-button {
+    @apply flex w-full items-center justify-between p-4 text-left transition-colors duration-300;
+  }
+
+  .h1-title {
+    @apply mb-4 text-6xl font-black md:text-8xl;
+  }
+
+  .h2-title {
+    @apply mb-2 bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-5xl font-bold text-transparent md:text-6xl;
+  }
+
+  .page-subtitle {
+    @apply text-2xl font-light tracking-widest text-cyan-300 md:text-3xl;
+  }
 }
