@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect } from 'react';
-import classeSData from './ClassesS.json';
 
 // --- Definição de Tipos para os dados ---
 interface UBoot {
@@ -83,7 +82,12 @@ export default function SClassPage() {
   >({});
   const [animationClass, setAnimationClass] = useState('');
 
-  const classeS: ClasseSMember[] = classeSData.classe_s;
+  interface ClasseSData {
+    classe_s: ClasseSMember[];
+  }
+
+  const classeSData: ClasseSData = require('./classeS.json');
+  const classeS = classeSData.classe_s;
   const currentMember = classeS[currentIndex];
 
   useEffect(() => {
