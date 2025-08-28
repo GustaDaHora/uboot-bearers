@@ -1,5 +1,6 @@
 'use client';
-import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { useEffect, useState, useCallback } from 'react';
 
 // --- Definição de Tipos para os dados ---
 interface UBoot {
@@ -223,10 +224,17 @@ const CharacterForm: React.FC<CharacterFormProps> = ({
     }
   };
 
-  const addToArray = (path: keyof ClasseSMember, subPath?: string) => {
+  const addToArray = (
+    path: keyof ClasseSMember,
+    subPath?:
+      | keyof UBoot
+      | keyof Historia
+      | keyof Progressao
+      | keyof NotasExtras,
+  ) => {
     const newData = { ...formData };
     if (subPath) {
-      const section = newData[path] as any;
+      const section = newData[path] as unknown as Record<string, string[]>;
       section[subPath] = [...(section[subPath] || []), ''];
     }
     setFormData(newData);
@@ -234,25 +242,33 @@ const CharacterForm: React.FC<CharacterFormProps> = ({
 
   const removeFromArray = (
     path: keyof ClasseSMember,
-    subPath: string,
+    subPath:
+      | keyof UBoot
+      | keyof Historia
+      | keyof Progressao
+      | keyof NotasExtras,
     index: number,
   ) => {
     const newData = { ...formData };
-    const section = newData[path] as any;
+    const section = newData[path] as unknown as Record<string, string[]>;
     section[subPath] = section[subPath].filter(
-      (_: any, i: number) => i !== index,
+      (_: unknown, i: number) => i !== index,
     );
     setFormData(newData);
   };
 
   const updateArrayItem = (
     path: keyof ClasseSMember,
-    subPath: string,
+    subPath:
+      | keyof UBoot
+      | keyof Historia
+      | keyof Progressao
+      | keyof NotasExtras,
     index: number,
     value: string,
   ) => {
     const newData = { ...formData };
-    const section = newData[path] as any;
+    const section = newData[path] as unknown as Record<string, string[]>;
     section[subPath][index] = value;
     setFormData(newData);
   };
@@ -355,7 +371,6 @@ const CharacterForm: React.FC<CharacterFormProps> = ({
                       })
                     }
                     className="input"
-                    min="10"
                     max="100"
                   />
                 </div>
@@ -471,7 +486,6 @@ const CharacterForm: React.FC<CharacterFormProps> = ({
                       })
                     }
                     className="input"
-                    min="1"
                     max="7"
                   />
                 </div>
@@ -525,7 +539,8 @@ const CharacterForm: React.FC<CharacterFormProps> = ({
                         ...formData,
                         u_boot: {
                           ...formData.u_boot,
-                          vinculo_simbiotico: e.target.value as any,
+                          vinculo_simbiotico: e.target
+                            .value as UBoot['vinculo_simbiotico'],
                         },
                       })
                     }
@@ -618,7 +633,6 @@ const CharacterForm: React.FC<CharacterFormProps> = ({
                     <div className="flex items-center space-x-4">
                       <input
                         type="range"
-                        min="1"
                         max="10"
                         value={value}
                         onChange={(e) =>
@@ -1215,14 +1229,10 @@ export default function SClassPage() {
   const currentMember = characters[currentIndex];
 
   useEffect(() => {
-    loadCharacters();
-  }, []);
-
-  useEffect(() => {
     setIsClient(true);
   }, []);
 
-  const loadCharacters = async () => {
+  const loadCharacters = useCallback(async () => {
     try {
       const loadedCharacters = await db.getAllCharacters();
       if (loadedCharacters.length === 0) {
@@ -1310,7 +1320,11 @@ export default function SClassPage() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [db]);
+
+  useEffect(() => {
+    loadCharacters();
+  }, [loadCharacters]);
 
   const handleSaveCharacter = async (character: ClasseSMember) => {
     try {
@@ -1444,9 +1458,11 @@ export default function SClassPage() {
       <div className="relative z-10 container mx-auto px-6 py-8">
         {/* Header */}
         <div className="mb-12 text-center">
-          <h1 className="mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-4xl font-bold text-transparent md:text-6xl">
-            U-BOOT
-          </h1>
+          <Link href={'/'}>
+            <h1 className="heading-primary text-responsive-lg">
+              U-Boot Bearers RPG
+            </h1>
+          </Link>
           <div className="text-xl font-bold tracking-wide text-gray-300 md:text-2xl">
             BEARERS • CHARACTER SHEET
           </div>
