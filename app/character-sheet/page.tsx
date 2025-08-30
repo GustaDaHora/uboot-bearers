@@ -52,6 +52,7 @@ interface ClasseSMember {
   origem: string;
   classe: string;
   aparencia: string;
+  emocao_dominante: string;
 
   // U-Bot
   u_boot: UBoot;
@@ -175,6 +176,7 @@ const CharacterForm: React.FC<CharacterFormProps> = ({
       origem: '',
       classe: '',
       aparencia: '',
+      emocao_dominante: '',
       u_boot: {
         nome: '',
         geracao: '1ª',
@@ -407,6 +409,32 @@ const CharacterForm: React.FC<CharacterFormProps> = ({
                     <option value="Híbrido">Híbrido</option>
                   </select>
                 </div>
+              </div>
+              <div>
+                <label className="mb-2 block text-sm font-medium text-gray-300">
+                  Emoção Dominante
+                </label>
+                <select
+                  value={formData.emocao_dominante}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      emocao_dominante: e.target.value,
+                    })
+                  }
+                  className="input"
+                >
+                  <option value="">Selecione uma emoção</option>
+                  <option value="Raiva">Raiva</option>
+                  <option value="Medo">Medo</option>
+                  <option value="Amor">Amor</option>
+                  <option value="Orgulho">Orgulho</option>
+                  <option value="Tristeza">Tristeza</option>
+                  <option value="Apatia">Apatia</option>
+                  <option value="Esperança">Esperança</option>
+                  <option value="Ódio">Ódio</option>
+                  <option value="Vingança">Vingança</option>
+                </select>
               </div>
               <div>
                 <label className="mb-2 block text-sm font-medium text-gray-300">
@@ -1244,6 +1272,7 @@ export default function SClassPage() {
           idade: 23,
           origem: 'Neo Tokyo, Setor 7',
           classe: 'Dano',
+          emocao_dominante: 'Esperança',
           aparencia:
             'Cabelos ruivos, olhos verdes brilhantes, cicatriz no rosto esquerdo.',
           u_boot: {
@@ -1525,6 +1554,12 @@ export default function SClassPage() {
                     <span>{currentMember.idade} anos</span>
                     <span>•</span>
                     <span>{currentMember.classe}</span>
+                    {currentMember.emocao_dominante && (
+                      <>
+                        <span>•</span>
+                        <span>{currentMember.emocao_dominante}</span>
+                      </>
+                    )}
                   </div>
                   {currentMember.origem && (
                     <p className="mt-2 text-xs text-gray-500">
@@ -1654,11 +1689,11 @@ export default function SClassPage() {
 
                 {/* Expandable Sections */}
                 <div className="space-y-4">
-                  {/* U-Bot Progression */}
-                  {currentMember.u_boot.progressao_formas.length > 0 && (
+                  {/* Conquistas & Missões */}
+                  {currentMember.progressao.conquistas.length > 0 && (
                     <div className="rounded-lg border border-gray-600 bg-gray-700/30">
                       <button
-                        onClick={() => toggleSection('progressao_formas')}
+                        onClick={() => toggleSection('conquistas')}
                         className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-gray-600/20"
                       >
                         <span className="font-semibold text-green-400">
