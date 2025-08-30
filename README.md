@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Uboot Bearers
 
-## Getting Started
+This project is a tabletop RPG organized as a website. It is divided into four main pages, each serving a specific purpose to immerse players in the game's universe.
 
-First, run the development server:
+## Pages
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### S-Classes
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This page showcases the most powerful and legendary characters in the Uboot Bearers lore. It provides detailed backstories, abilities, and artwork for each S-Class character, offering players a glimpse into the world's most influential figures.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Tutorial
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The tutorial page is a comprehensive guide on how to play the RPG. It covers the core mechanics, rules, and gameplay loops, ensuring that new players can quickly learn the ropes and jump into the action.
 
-## Learn More
+### Character Sheet
 
-To learn more about Next.js, take a look at the following resources:
+The character sheet page allows users to create and manage their own characters. All information is saved locally in the browser using IndexedDB, providing a persistent and offline-first experience.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Books
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This page presents the history and lore of the Uboot Bearers RPG. It contains a collection of books, articles, and other written materials that delve into the world's rich history, diverse cultures, and epic conflicts.
 
-## Deploy on Vercel
+## Technical Details
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Framework:** [Next.js](https://nextjs.org/)
+- **Languages:** TypeScript, JavaScript
+- **Database:** IndexedDB (for character sheets)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Linting:** [ESLint](https://eslint.org/)
+- **Formatting:** [Prettier](https://prettier.io/)
