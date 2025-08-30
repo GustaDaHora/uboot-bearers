@@ -16,39 +16,52 @@ A cada batalha, o vínculo entre o portador e o U-Boot cresce — até o ponto e
 
 Cada jogador deve preencher seu Character Sheet.
 
-📋 Atributos obrigatórios:
+📋 Atributos Essenciais:
 
-Nome e Codinome (ex.: Aurora, “Líder dos Céus”)
+- **Nome e Codinome:** A identidade do seu personagem (ex.: Aurora, “Líder dos Céus”).
+- **Idade e Origem:** Background básico, como cidade natal, família ou eventos passados.
+- **Rank Inicial:** A sua classificação no sistema de ranqueamento (D, C, B, A ou S). Geralmente, personagens começam como Rank D ou C.
+- **Classe de Combate:** O papel funcional do seu personagem em batalhas (ex: Tanque, Suporte, Dano, Controle, Híbrido).
+- **Emoção Dominante:** A emoção que define a personalidade e as habilidades do seu U-Boot (ver seção 3).
+- **Descrição Física (Aparência):** Como seu personagem se parece.
+- **Nome do U-Boot:** O nome do seu parceiro simbiótico.
+- **História e Memórias:** O passado do personagem é dividido em:
+  - **Background:** A história geral e acontecimentos que o moldaram.
+  - **Memórias Marcantes:** Lembranças específicas que definiram a simbiose com o U-Boot.
 
-Idade e Origem (cidade natal, família, passado)
+📊 Atributos Numéricos (distribua os pontos conforme as regras do mestre, geralmente em uma escala de 1 a 10):
 
-Classe Inicial (D, C, B, A ou S — geralmente começa em D ou C)
+- **Vitalidade (HP):** Pontos de vida.
+- **Energia (PE):** Pontos de energia para habilidades especiais.
+- **Força Física:** Capacidade de dano e esforço físico.
+- **Agilidade:** Velocidade, reflexos e capacidade de esquiva.
+- **Resistência:** Capacidade de suportar dano e efeitos negativos.
+- **Inteligência:** Conhecimento, raciocínio e habilidade com tecnologia.
+- **Carisma:** Influência social, poder de persuasão e liderança.
 
-Emoção Dominante (define a personalidade do U-Boot)
+---
 
-Descrição Física
+📝 Atributos Detalhados (Opções avançadas no Character Sheet):
 
-História / Memória Marcante (a lembrança que determinou sua simbiose)
+Para jogadores que desejam maior profundidade, a ficha de personagem inclui campos adicionais:
 
-Nome do U-Boot
-
-📊 Atributos numéricos (exemplo inicial, ajustável pelo mestre):
-
-Vitalidade (HP)
-
-Energia (PE)
-
-Força
-
-Agilidade
-
-Resistência
-
-Inteligência
-
-Carisma
-
-(Escala de 1 a 10, distribuindo pontos conforme o sistema de regras do mestre.)
+- **U-Boot:**
+  - **Geração:** A "idade" ou versão do U-Boot (ex: 1ª, 2ª, 3ª Geração).
+  - **Vínculo Simbiótico:** O nível de conexão com seu U-Boot (Baixo, Médio, Alto, Completo).
+  - **Cor da Energia:** A cor que representa a energia do seu U-Boot.
+  - **Origem do U-Boot:** De onde ele veio (ex: uma IA, uma alma, uma entidade cósmica).
+- **História:**
+  - **Conexões:** Aliados, contatos ou inimigos importantes.
+  - **Cicatrizes:** Marcas físicas ou emocionais de eventos passados.
+- **Progressão:**
+  - **Conquistas:** Missões importantes ou feitos heroicos.
+  - **Relíquias:** Itens especiais com habilidades únicas.
+  - **Absorções de U-Boots:** Registros de outros U-Boots que seu personagem absorveu.
+  - **Títulos:** Apelidos ou honrarias recebidas.
+- **Notas Adicionais:**
+  - **Citação Famosa:** Uma frase que define seu personagem.
+  - **Diário de Jornada:** Um registro das aventuras da campanha.
+  - **Espaço Livre:** Para anotações gerais do jogador.
 
 ---
 
