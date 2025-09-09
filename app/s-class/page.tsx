@@ -6,23 +6,23 @@ import classeSData from './ClassesS.json';
 // --- Definição de Tipos para os dados ---
 interface UBoot {
   nome: string;
-  cor_base?: string;
-  led_ativo?: string;
-  modo_arma?: string;
-  transformacoes?: string;
+  cor_base?: string | null;
+  led_ativo?: string | null;
+  modo_arma?: string | null;
+  transformacoes?: string | null;
   habilidade_unica?: string;
   poderes?: string[];
-  forma_manifesta?: string;
+  forma_manifesta?: string | null;
 }
 
 interface EstiloCombate {
   ofensiva?: string;
   defensiva?: string;
-  controle_de_campo?: string;
-  desvantagem?: string;
-  foco?: string;
-  mobilidade?: string;
-  defesa?: string;
+  controle_de_campo?: string | null;
+  desvantagem?: string | null;
+  foco?: string | null;
+  mobilidade?: string | null;
+  defesa?: string | null;
 }
 
 interface PoderPolitico {
@@ -31,27 +31,27 @@ interface PoderPolitico {
 }
 
 interface PerfilEmocional {
-  avo?: string;
-  resumo?: string;
-  trauma?: string;
+  avo?: string | null;
+  resumo?: string | null;
+  trauma?: string | null;
   emocao_dominante?: string;
-  trauma_central?: string;
-  trauma_principal?: string;
+  trauma_central?: string | null;
+  trauma_principal?: string | null;
 }
 
 interface PerfilPsicologico {
   personalidade?: string;
   emocao_dominante?: string;
-  complexo_de_fraqueza?: string;
-  objetivo_secreto?: string;
-  trauma?: string;
-  trauma_central?: string;
-  trauma_principal?: string;
+  complexo_de_fraqueza?: string | null;
+  objetivo_secreto?: string | null;
+  trauma?: string | null;
+  trauma_central?: string | null;
+  trauma_principal?: string | null;
 }
 
 interface AparenciaPostura {
-  publica?: string;
-  privada?: string;
+  publica?: string | null;
+  privada?: string | null;
 }
 
 interface ClasseSMember {
@@ -66,15 +66,15 @@ interface ClasseSMember {
   afiliacao_direta?: string;
   u_boot: UBoot;
   poder_politico?: PoderPolitico[];
-  relacoes_com_outros_classe_s?: Record<string, unknown>;
+  relacoes_com_outros_classe_s?: Record<string, unknown> | null;
   perfil_emocional_e_heranca?: PerfilEmocional;
   estilo_combate: EstiloCombate;
   aparencia_e_postura?: AparenciaPostura;
-  estetica_e_presenca_em_campo?: string;
-  historico_de_origem?: string;
-  anomalias_e_segredos?: string;
-  metodologia_de_crescimento?: string;
-  presenca_visual_e_comportamento?: string;
+  estetica_e_presenca_em_campo?: string | null;
+  historico_de_origem?: string | null;
+  anomalias_e_segredos?: string | null;
+  metodologia_de_crescimento?: string | null;
+  presenca_visual_e_comportamento?: string | null;
   perfil_psicologico_e_emocional?: PerfilPsicologico;
   perfil_psicologico_e_interacoes?: PerfilPsicologico;
   perfil_psicologico_e_relacoes?: Record<string, unknown>;
