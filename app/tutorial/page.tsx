@@ -75,10 +75,10 @@ export default function TutorialPage() {
   ];
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-gray-900 p-8 text-white">
+    <main className="min-h-screen overflow-x-hidden bg-gray-900 p-4 text-white md:p-8">
       <div className="stars fixed inset-0 opacity-30"></div>
-      <header className="relative z-10 border-b border-slate-700/50 p-6">
-        <div className="mx-auto flex max-w-6xl items-center justify-between">
+      <header className="relative z-10 border-b border-slate-700/50 p-4 md:p-6">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 md:flex-row md:justify-between">
           <div className="flex items-center space-x-4">
             <button
               onClick={handleBack}
@@ -98,16 +98,13 @@ export default function TutorialPage() {
                 ></path>
               </svg>
             </button>
-            <h1 className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-2xl font-bold text-transparent">
+            <h1 className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-center text-xl font-bold text-transparent md:text-left md:text-2xl">
               Tutorial - U-Boot Bearers
             </h1>
           </div>
           <div className="flex items-center space-x-4">
-            <div className="text-sm text-slate-400">
+            <div className="hidden text-sm text-slate-400 sm:block">
               Progresso:{' '}
-              <span id="progressText">
-                {currentStep}/{totalSteps}
-              </span>
             </div>
             <div className="h-2 w-32 overflow-hidden rounded-full bg-slate-700">
               <div
@@ -116,20 +113,25 @@ export default function TutorialPage() {
                 style={{ width: progressBarWidth }}
               ></div>
             </div>
+            <div className="text-sm text-slate-400">
+              <span id="progressText">
+                {currentStep}/{totalSteps}
+              </span>
+            </div>
           </div>
         </div>
       </header>
-      <main className="relative z-10 mx-auto max-w-6xl p-6">
+      <main className="relative z-10 mx-auto max-w-6xl p-2 md:p-6">
         <div id="tutorialContent" className="space-y-8">
           <section
             id="step1"
             className={`tutorial-step ${currentStep !== 1 ? 'hidden' : ''}`}
           >
-            <div className="tutorial-card rounded-xl p-8">
+            <div className="tutorial-card rounded-xl p-4 md:p-8">
               <div className="mb-8 text-center">
-                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-cyan-500">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 md:h-20 md:w-20">
                   <svg
-                    className="h-10 w-10 text-white"
+                    className="h-8 w-8 text-white md:h-10 md:w-10"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -142,10 +144,10 @@ export default function TutorialPage() {
                     ></path>
                   </svg>
                 </div>
-                <h2 className="mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-3xl font-bold text-transparent">
+                <h2 className="mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-2xl font-bold text-transparent md:text-3xl">
                   Bem-vindo ao U-Boot Bearers
                 </h2>
-                <p className="mx-auto max-w-2xl text-xl text-slate-300">
+                <p className="mx-auto max-w-2xl text-lg text-slate-300 md:text-xl">
                   Os U-Boots são braceletes simbióticos biomecânicos que
                   escolheram a humanidade como hospedeiros. Eles não são apenas
                   armas: são consciências espelhadas das emoções humanas.
@@ -165,7 +167,7 @@ export default function TutorialPage() {
               <div className="text-center">
                 <button
                   onClick={nextStep}
-                  className="next-btn glow-effect rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-3 font-semibold transition-all hover:from-blue-500 hover:to-cyan-500"
+                  className="next-btn glow-effect rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 px-6 py-3 font-semibold transition-all hover:from-blue-500 hover:to-cyan-500 md:px-8"
                 >
                   Começar Tutorial →
                 </button>
@@ -176,8 +178,8 @@ export default function TutorialPage() {
             id="step2"
             className={`tutorial-step ${currentStep !== 2 ? 'hidden' : ''}`}
           >
-            <div className="tutorial-card rounded-xl p-8">
-              <h2 className="mb-6 text-2xl font-bold text-cyan-400">
+            <div className="tutorial-card rounded-xl p-4 md:p-8">
+              <h2 className="mb-6 text-xl font-bold text-cyan-400 md:text-2xl">
                 📋 Criação do Personagem
               </h2>
 
@@ -266,7 +268,7 @@ export default function TutorialPage() {
                 </button>
                 <button
                   onClick={nextStep}
-                  className="next-btn glow-effect rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-3 font-semibold transition-all hover:from-blue-500 hover:to-cyan-500"
+                  className="next-btn glow-effect rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 px-6 py-3 font-semibold transition-all hover:from-blue-500 hover:to-cyan-500 md:px-8"
                 >
                   Próximo →
                 </button>
@@ -277,8 +279,8 @@ export default function TutorialPage() {
             id="step3"
             className={`tutorial-step ${currentStep !== 3 ? 'hidden' : ''}`}
           >
-            <div className="tutorial-card rounded-xl p-8">
-              <h2 className="mb-6 text-2xl font-bold text-cyan-400">
+            <div className="tutorial-card rounded-xl p-4 md:p-8">
+              <h2 className="mb-6 text-xl font-bold text-cyan-400 md:text-2xl">
                 🧩 Simbiose Emocional
               </h2>
 
@@ -328,7 +330,7 @@ export default function TutorialPage() {
                 </button>
                 <button
                   onClick={nextStep}
-                  className="next-btn glow-effect rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-3 font-semibold transition-all hover:from-blue-500 hover:to-cyan-500"
+                  className="next-btn glow-effect rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 px-6 py-3 font-semibold transition-all hover:from-blue-500 hover:to-cyan-500 md:px-8"
                 >
                   Próximo →
                 </button>
@@ -339,8 +341,8 @@ export default function TutorialPage() {
             id="step4"
             className={`tutorial-step ${currentStep !== 4 ? 'hidden' : ''}`}
           >
-            <div className="tutorial-card rounded-xl p-8">
-              <h2 className="mb-6 text-2xl font-bold text-cyan-400">
+            <div className="tutorial-card rounded-xl p-4 md:p-8">
+              <h2 className="mb-6 text-xl font-bold text-cyan-400 md:text-2xl">
                 ⚡ Evolução dos U-Boots
               </h2>
 
@@ -439,7 +441,7 @@ export default function TutorialPage() {
                 </button>
                 <button
                   onClick={nextStep}
-                  className="next-btn glow-effect rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-3 font-semibold transition-all hover:from-blue-500 hover:to-cyan-500"
+                  className="next-btn glow-effect rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 px-6 py-3 font-semibold transition-all hover:from-blue-500 hover:to-cyan-500 md:px-8"
                 >
                   Próximo →
                 </button>
@@ -450,8 +452,8 @@ export default function TutorialPage() {
             id="step5"
             className={`tutorial-step ${currentStep !== 5 ? 'hidden' : ''}`}
           >
-            <div className="tutorial-card rounded-xl p-8">
-              <h2 className="mb-6 text-2xl font-bold text-cyan-400">
+            <div className="tutorial-card rounded-xl p-4 md:p-8">
+              <h2 className="mb-6 text-xl font-bold text-cyan-400 md:text-2xl">
                 🔄 Absorção de U-Boots
               </h2>
 
@@ -535,7 +537,7 @@ export default function TutorialPage() {
                 </button>
                 <button
                   onClick={nextStep}
-                  className="next-btn glow-effect rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-3 font-semibold transition-all hover:from-blue-500 hover:to-cyan-500"
+                  className="next-btn glow-effect rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 px-6 py-3 font-semibold transition-all hover:from-blue-500 hover:to-cyan-500 md:px-8"
                 >
                   Próximo →
                 </button>
@@ -546,8 +548,8 @@ export default function TutorialPage() {
             id="step6"
             className={`tutorial-step ${currentStep !== 6 ? 'hidden' : ''}`}
           >
-            <div className="tutorial-card rounded-xl p-8">
-              <h2 className="mb-6 text-2xl font-bold text-cyan-400">
+            <div className="tutorial-card rounded-xl p-4 md:p-8">
+              <h2 className="mb-6 text-xl font-bold text-cyan-400 md:text-2xl">
                 ⚔️ Sistema de Combate
               </h2>
 
@@ -647,7 +649,7 @@ export default function TutorialPage() {
                 </button>
                 <button
                   onClick={nextStep}
-                  className="next-btn glow-effect rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-3 font-semibold transition-all hover:from-blue-500 hover:to-cyan-500"
+                  className="next-btn glow-effect rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 px-6 py-3 font-semibold transition-all hover:from-blue-500 hover:to-cyan-500 md:px-8"
                 >
                   Próximo →
                 </button>
@@ -658,8 +660,8 @@ export default function TutorialPage() {
             id="step7"
             className={`tutorial-step ${currentStep !== 7 ? 'hidden' : ''}`}
           >
-            <div className="tutorial-card rounded-xl p-8">
-              <h2 className="mb-6 text-2xl font-bold text-cyan-400">
+            <div className="tutorial-card rounded-xl p-4 md:p-8">
+              <h2 className="mb-6 text-xl font-bold text-cyan-400 md:text-2xl">
                 🏆 Sistema de Rankings
               </h2>
 
@@ -791,7 +793,7 @@ export default function TutorialPage() {
                 </button>
                 <button
                   onClick={nextStep}
-                  className="next-btn glow-effect rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-3 font-semibold transition-all hover:from-blue-500 hover:to-cyan-500"
+                  className="next-btn glow-effect rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 px-6 py-3 font-semibold transition-all hover:from-blue-500 hover:to-cyan-500 md:px-8"
                 >
                   Próximo →
                 </button>
@@ -802,8 +804,8 @@ export default function TutorialPage() {
             id="step8"
             className={`tutorial-step ${currentStep !== 8 ? 'hidden' : ''}`}
           >
-            <div className="tutorial-card rounded-xl p-8">
-              <h2 className="mb-6 text-2xl font-bold text-cyan-400">
+            <div className="tutorial-card rounded-xl p-4 md:p-8">
+              <h2 className="mb-6 text-xl font-bold text-cyan-400 md:text-2xl">
                 🧠 Vozes Internas
               </h2>
 
@@ -977,7 +979,7 @@ export default function TutorialPage() {
                   </button>
                   <button
                     onClick={handleFinish}
-                    className="glow-effect rounded-lg bg-gradient-to-r from-green-600 to-blue-600 px-8 py-3 font-semibold transition-all hover:from-green-500 hover:to-blue-500"
+                    className="glow-effect rounded-lg bg-gradient-to-r from-green-600 to-blue-600 px-6 py-3 font-semibold transition-all hover:from-green-500 hover:to-blue-500 md:px-8"
                   >
                     Criar Personagem
                   </button>
