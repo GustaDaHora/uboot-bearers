@@ -15,13 +15,13 @@
         "cor_base": "Branco opalescente com pulsos multicoloridos",
         "led_ativo": "Aurora cintilante que muda de cor suavemente",
         "modo_arma": "Lumen Borealis não se transforma em arma física. Sua única função é gerar uma cúpula de aurora que cobre dezenas de quilômetros, paralisando todos os monstros em seu interior em um transe hipnótico.",
-        "transformacoes": null,
+        "transformacoes": "Não especificado",
         "habilidade_unica": "Cúpula de aurora paralisante de grande escala",
         "poderes": [
           "Gera cúpula de aurora que cobre dezenas de quilômetros",
           "Paralisa monstros em transe hipnótico"
         ],
-        "forma_manifesta": null
+        "forma_manifesta": "Não especificado"
       },
       "poder_politico": [
         {
@@ -43,21 +43,21 @@
         "demais_classe_s": "Mantêm-na no poder por conveniência, pois uma líder fraca lhes dá mais liberdade."
       },
       "perfil_emocional_e_heranca": {
-        "avo": "O Grande Guerreiro, herói da reconquista da Terra.",
+        "descendencia": "Seu avo foi O Grande Guerreiro, herói da reconquista da Terra.",
         "resumo": "Aurora vive à sombra de seu legado, carregando a pressão de ser um símbolo nacional enquanto se sente uma fraude. Sua emoção dominante é a Insegurança, mascarada por uma fachada de liderança.",
-        "trauma": null,
+        "trauma": "Nenhum registrado",
         "emocao_dominante": "Insegurança",
-        "trauma_central": null,
-        "trauma_principal": null
+        "trauma_central": "Nenhum registrado",
+        "trauma_principal": "Nenhum registrado"
       },
       "estilo_combate": {
         "ofensiva": "Nula",
         "defensiva": "Nula (depende de outros para proteção)",
         "controle_de_campo": "Absoluto",
         "desvantagem": "Entra em exaustão profunda após o uso",
-        "foco": null,
-        "mobilidade": null,
-        "defesa": null
+        "foco": "Não especificado",
+        "mobilidade": "Não especificado",
+        "defesa": "Não especificado"
       },
       "aparencia_e_postura": {
         "publica": "Serena, gentil, sorridente, com uma pequena coroa de cristal flutuante.",
@@ -66,16 +66,16 @@
       "estetica_e_presenca_em_campo": "Serena, gentil, sorridente, com uma pequena coroa de cristal flutuante",
       "historico_de_origem": "Neta do Grande Guerreiro, herói da reconquista da Terra. Vive sob pressão constante de manter o legado familiar.",
       "anomalias_e_segredos": "Vive à sombra do legado de seu avô, sentindo-se uma fraude como líder",
-      "metodologia_de_crescimento": null,
+      "metodologia_de_crescimento": "Não especificado",
       "presenca_visual_e_comportamento": "Usa uma pequena coroa de cristal flutuante. É vista como símbolo de esperança, mas internamente é frágil.",
       "perfil_psicologico_e_emocional": {
         "personalidade": "Insegura, ansiosa, mas tenta manter uma fachada de liderança",
         "emocao_dominante": "Insegurança",
         "complexo_de_fraqueza": "Sente-se uma fraude comparada ao seu avô herói",
-        "objetivo_secreto": null,
-        "trauma": null,
-        "trauma_central": null,
-        "trauma_principal": null
+        "objetivo_secreto": "Nenhum registrado",
+        "trauma": "Nenhum registrado",
+        "trauma_central": "Nenhum registrado",
+        "trauma_principal": "Nenhum registrado"
       },
       "perfil_psicologico_e_interacoes": {
         "personalidade": "Insegura, ansiosa, mas tenta manter uma fachada de liderança",
@@ -100,10 +100,10 @@
       "afiliacao_direta": "Nenhuma. Nômade e não rastreável",
       "u_boot": {
         "nome": "Janus (Experimental de 2ª Geração)",
-        "cor_base": null,
-        "led_ativo": null,
+        "cor_base": "Não especificado",
+        "led_ativo": "Não especificado",
         "modo_arma": "Não possui uma forma de arma tradicional. Manifesta-se como portais espaciais e intangibilidade.",
-        "transformacoes": null,
+        "transformacoes": "Não especificado",
         "habilidade_unica": "Leitura absoluta de intenções e emoções",
         "poderes": [
           "Atravessa qualquer matéria sólida",
@@ -112,47 +112,54 @@
         ],
         "forma_manifesta": "Portais espaciais e intangibilidade"
       },
-      "poder_politico": [],
-      "relacoes_com_outros_classe_s": null,
+      "poder_politico": [
+        {
+          "direito": "Nenhum",
+          "descricao": "Nenhum poder político registrado"
+        }
+      ],
+      "relacoes_com_outros_classe_s": {
+        "observacao": "Nenhuma relação registrada"
+      },
       "perfil_emocional_e_heranca": {
-        "avo": null,
-        "resumo": null,
+        "descendencia": "Não especificado",
+        "resumo": "Não especificado",
         "trauma": "O massacre silencioso do Projeto Éden",
         "emocao_dominante": "Vazio",
-        "trauma_central": null,
-        "trauma_principal": null
+        "trauma_central": "Nenhum registrado",
+        "trauma_principal": "Nenhum registrado"
       },
       "estilo_combate": {
         "ofensiva": "Nula",
         "defensiva": "Absoluta",
         "controle_de_campo": "Absoluto",
-        "desvantagem": null,
-        "foco": null,
-        "mobilidade": null,
-        "defesa": null
+        "desvantagem": "Não especificado",
+        "foco": "Não especificado",
+        "mobilidade": "Não especificado",
+        "defesa": "Não especificado"
       },
       "aparencia_e_postura": {
-        "publica": null,
-        "privada": null
+        "publica": "Não especificado",
+        "privada": "Não especificado"
       },
       "estetica_e_presenca_em_campo": "Sua imagem é sempre distorcida, como uma falha na realidade. Seus portais são silenciosos e invisíveis a olho nu. Raramente é vista diretamente",
       "historico_de_origem": "Única sobrevivente do Projeto Éden, onde 60 crianças foram usadas em testes com U-Boots que manipulam o espaço. O que aconteceu com as outras 59 é um dos maiores segredos do governo",
       "anomalias_e_segredos": "Sua capacidade de ler intenções é absoluta. Há teorias de que ela não viaja pelo espaço, mas sim entre dimensões. O Conselho a teme como uma possível ameaça existencial, mas não tem meios para contê-la",
-      "metodologia_de_crescimento": null,
+      "metodologia_de_crescimento": "Não especificado",
       "presenca_visual_e_comportamento": "Sua imagem é sempre distorcida, como uma falha na realidade. Raramente é vista diretamente.",
       "perfil_psicologico_e_emocional": {
         "personalidade": "Totalmente desapegada e apática",
         "emocao_dominante": "Vazio",
-        "complexo_de_fraqueza": null,
-        "objetivo_secreto": null,
+        "complexo_de_fraqueza": "Nenhum registrado",
+        "objetivo_secreto": "Nenhum registrado",
         "trauma": "O massacre silencioso do Projeto Éden",
-        "trauma_central": null,
-        "trauma_principal": null
+        "trauma_central": "Nenhum registrado",
+        "trauma_principal": "Nenhum registrado"
       },
       "perfil_psicologico_e_interacoes": {
         "personalidade": "Totalmente desapegada e apática",
         "emocao_dominante": "Vazio",
-        "complexo_de_fraqueza": null
+        "complexo_de_fraqueza": "Nenhum registrado"
       },
       "perfil_psicologico_e_relacoes": {
         "emocao_dominante": "Vazio",
@@ -172,9 +179,9 @@
       "afiliacao_direta": "Ordem dos Filhos da Aurora (Igreja civil)",
       "u_boot": {
         "nome": "Elysiar",
-        "cor_base": null,
-        "led_ativo": null,
-        "modo_arma": null,
+        "cor_base": "Não especificado",
+        "led_ativo": "Não especificado",
+        "modo_arma": "Não especificado",
         "transformacoes": "Arco de luz, lança, espada, escudo esférico e asas de luz",
         "habilidade_unica": "Cura completa de órgãos e membros perdidos usando suas auréolas",
         "poderes": [
@@ -183,49 +190,56 @@
           "Voo com asas de luz",
           "Escudo esférico defensivo"
         ],
-        "forma_manifesta": null
+        "forma_manifesta": "Não especificado"
       },
-      "poder_politico": [],
-      "relacoes_com_outros_classe_s": null,
+      "poder_politico": [
+        {
+          "direito": "Nenhum",
+          "descricao": "Nenhum poder político registrado"
+        }
+      ],
+      "relacoes_com_outros_classe_s": {
+        "observacao": "Nenhuma relação registrada"
+      },
       "perfil_emocional_e_heranca": {
-        "avo": null,
-        "resumo": null,
-        "trauma": null,
+        "descendencia": "Não especificado",
+        "resumo": "Não especificado",
+        "trauma": "Nenhum registrado",
         "emocao_dominante": "Amor e Compaixão",
         "trauma_central": "A morte da irmã por ganância científica",
-        "trauma_principal": null
+        "trauma_principal": "Nenhum registrado"
       },
       "estilo_combate": {
         "ofensiva": "Moderada, mas precisa",
         "defensiva": "Escudo quase inquebrável",
-        "controle_de_campo": null,
-        "desvantagem": null,
+        "controle_de_campo": "Não especificado",
+        "desvantagem": "Não especificado",
         "foco": "Suporte e defesa",
         "mobilidade": "Altíssima com as asas",
         "defesa": "Escudo quase inquebrável"
       },
       "aparencia_e_postura": {
-        "publica": null,
-        "privada": null
+        "publica": "Não especificado",
+        "privada": "Não especificado"
       },
       "estetica_e_presenca_em_campo": "Aparência angelical, veste túnicas brancas e mantém os olhos fechados. Sua presença é tranquilizadora. As duas auréolas que o seguem simbolizam ele e sua falecida irmã",
       "historico_de_origem": "Sua irmã morreu devido a experimentos com U-Boots conduzidos por seus pais. Sua morte despertou o U-Boot de Raphael, que se manifestou como uma Forma Bênção",
       "anomalias_e_segredos": "Rumores persistem de que ele pode reviver os mortos, algo que ele nega veementemente. Acredita-se que a consciência de sua irmã habita o U-Boot",
-      "metodologia_de_crescimento": null,
+      "metodologia_de_crescimento": "Não especificado",
       "presenca_visual_e_comportamento": "Aparência angelical, veste túnicas brancas e mantém os olhos fechados. Sua presença é tranquilizadora.",
       "perfil_psicologico_e_emocional": {
         "personalidade": "Compassivo, melancólico, protetor",
         "emocao_dominante": "Amor e Compaixão",
-        "complexo_de_fraqueza": null,
-        "objetivo_secreto": null,
-        "trauma": null,
+        "complexo_de_fraqueza": "Nenhum registrado",
+        "objetivo_secreto": "Nenhum registrado",
+        "trauma": "Nenhum registrado",
         "trauma_central": "A morte da irmã por ganância científica",
-        "trauma_principal": null
+        "trauma_principal": "Nenhum registrado"
       },
       "perfil_psicologico_e_interacoes": {
         "personalidade": "Compassivo, melancólico, protetor",
         "emocao_dominante": "Amor e Compaixão",
-        "complexo_de_fraqueza": null
+        "complexo_de_fraqueza": "Nenhum registrado"
       },
       "perfil_psicologico_e_relacoes": {
         "emocao_dominante": "Amor e Compaixão",
@@ -245,10 +259,10 @@
       "afiliacao_direta": "Conselho de Regulação Central da Capital",
       "u_boot": {
         "nome": "Tenebris",
-        "cor_base": null,
-        "led_ativo": null,
-        "modo_arma": null,
-        "transformacoes": null,
+        "cor_base": "Não especificado",
+        "led_ativo": "Não especificado",
+        "modo_arma": "Não especificado",
+        "transformacoes": "Não especificado",
         "habilidade_unica": "Absorção de outros U-Boots",
         "poderes": [
           "Raízes-tentáculos monstruosas para combate",
@@ -258,47 +272,54 @@
         ],
         "forma_manifesta": "Raízes-tentáculos monstruosas que emergem de suas costas, capazes de se transformar em armas ou em um casulo regenerativo"
       },
-      "poder_politico": [],
-      "relacoes_com_outros_classe_s": null,
+      "poder_politico": [
+        {
+          "direito": "Nenhum",
+          "descricao": "Nenhum poder político registrado"
+        }
+      ],
+      "relacoes_com_outros_classe_s": {
+        "observacao": "Nenhuma relação registrada"
+      },
       "perfil_emocional_e_heranca": {
-        "avo": null,
-        "resumo": null,
-        "trauma": null,
+        "descendencia": "Não especificado",
+        "resumo": "Não especificado",
+        "trauma": "Nenhum registrado",
         "emocao_dominante": "Apatia e Egoísmo",
-        "trauma_central": null,
-        "trauma_principal": null
+        "trauma_central": "Nenhum registrado",
+        "trauma_principal": "Nenhum registrado"
       },
       "estilo_combate": {
         "ofensiva": "Brutal",
         "defensiva": "Regenerativa",
         "controle_de_campo": "Alto",
-        "desvantagem": null,
-        "foco": null,
-        "mobilidade": null,
-        "defesa": null
+        "desvantagem": "Não especificado",
+        "foco": "Não especificado",
+        "mobilidade": "Não especificado",
+        "defesa": "Não especificado"
       },
       "aparencia_e_postura": {
-        "publica": null,
-        "privada": null
+        "publica": "Não especificado",
+        "privada": "Não especificado"
       },
-      "estetica_e_presenca_em_campo": null,
+      "estetica_e_presenca_em_campo": "Não especificado",
       "historico_de_origem": "Portador de um U-Boot inicialmente apático, decidiu fortalecê-lo através de automutilação e assassinato de outros portadores",
-      "anomalias_e_segredos": null,
+      "anomalias_e_segredos": "Nenhum registrado",
       "metodologia_de_crescimento": "Para fortalecer seu U-Boot apático, Leonardo removeu partes do próprio corpo e assassinou outros portadores para que Tenebris absorvesse seus U-Boots",
       "presenca_visual_e_comportamento": "Usa um tapa-olho e roupas de manga comprida para esconder suas cicatrizes. É manipulador e egoísta, usando sua influência política para seus próprios fins",
       "perfil_psicologico_e_emocional": {
         "personalidade": "Psicopático, manipulador, egoísta",
         "emocao_dominante": "Apatia e Egoísmo",
-        "complexo_de_fraqueza": null,
+        "complexo_de_fraqueza": "Nenhum registrado",
         "objetivo_secreto": "Eliminar os outros Classe S para se tornar o poder supremo",
-        "trauma": null,
-        "trauma_central": null,
-        "trauma_principal": null
+        "trauma": "Nenhum registrado",
+        "trauma_central": "Nenhum registrado",
+        "trauma_principal": "Nenhum registrado"
       },
       "perfil_psicologico_e_interacoes": {
         "personalidade": "Psicopático, manipulador, egoísta",
         "emocao_dominante": "Apatia e Egoísmo",
-        "complexo_de_fraqueza": null
+        "complexo_de_fraqueza": "Nenhum registrado"
       },
       "perfil_psicologico_e_relacoes": {
         "emocao_dominante": "Apatia e Egoísmo",
@@ -318,10 +339,10 @@
       "afiliacao_direta": "Academia Militar Central",
       "u_boot": {
         "nome": "Hélio (3ª Geração)",
-        "cor_base": null,
-        "led_ativo": null,
-        "modo_arma": null,
-        "transformacoes": null,
+        "cor_base": "Não especificado",
+        "led_ativo": "Não especificado",
+        "modo_arma": "Não especificado",
+        "transformacoes": "Não especificado",
         "habilidade_unica": "Absorção de energia solar para poder variável",
         "poderes": [
           "Absorve energia solar para gerar calor letal",
@@ -329,44 +350,51 @@
           "Intocável ao meio-dia",
           "Impotente à noite"
         ],
-        "forma_manifesta": null
+        "forma_manifesta": "Não especificado"
       },
-      "poder_politico": [],
-      "relacoes_com_outros_classe_s": null,
+      "poder_politico": [
+        {
+          "direito": "Nenhum",
+          "descricao": "Nenhum poder político registrado"
+        }
+      ],
+      "relacoes_com_outros_classe_s": {
+        "observacao": "Nenhuma relação registrada"
+      },
       "perfil_emocional_e_heranca": {
-        "avo": null,
-        "resumo": null,
-        "trauma": null,
+        "descendencia": "Não especificado",
+        "resumo": "Não especificado",
+        "trauma": "Nenhum registrado",
         "emocao_dominante": "Esperança e Admiração",
-        "trauma_central": null,
-        "trauma_principal": null
+        "trauma_central": "Nenhum registrado",
+        "trauma_principal": "Nenhum registrado"
       },
       "estilo_combate": {
         "ofensiva": "Extrema (durante o dia)",
         "defensiva": "Nula (durante a noite)",
         "controle_de_campo": "Poder de área massivo",
-        "desvantagem": null,
-        "foco": null,
-        "mobilidade": null,
-        "defesa": null
+        "desvantagem": "Não especificado",
+        "foco": "Não especificado",
+        "mobilidade": "Não especificado",
+        "defesa": "Não especificado"
       },
       "aparencia_e_postura": {
-        "publica": null,
-        "privada": null
+        "publica": "Não especificado",
+        "privada": "Não especificado"
       },
-      "estetica_e_presenca_em_campo": null,
+      "estetica_e_presenca_em_campo": "Não especificado",
       "historico_de_origem": "Fã da heroína Victoria, seu sonho e empolgação sobrecarregaram seu primeiro U-Boot. O segundo, um modelo experimental, criou uma simbiose instável com o sol, deixando-a com cicatrizes",
-      "anomalias_e_segredos": null,
-      "metodologia_de_crescimento": null,
-      "presenca_visual_e_comportamento": null,
+      "anomalias_e_segredos": "Nenhum registrado",
+      "metodologia_de_crescimento": "Não especificado",
+      "presenca_visual_e_comportamento": "Não especificado",
       "perfil_psicologico_e_emocional": {
         "personalidade": "Determinada e teimosa",
         "emocao_dominante": "Esperança e Admiração",
         "complexo_de_fraqueza": "Sua impotência noturna a frustra profundamente",
-        "objetivo_secreto": null,
-        "trauma": null,
-        "trauma_central": null,
-        "trauma_principal": null
+        "objetivo_secreto": "Nenhum registrado",
+        "trauma": "Nenhum registrado",
+        "trauma_central": "Nenhum registrado",
+        "trauma_principal": "Nenhum registrado"
       },
       "perfil_psicologico_e_interacoes": {
         "personalidade": "Determinada e teimosa",
@@ -375,7 +403,7 @@
       },
       "perfil_psicologico_e_relacoes": {
         "emocao_dominante": "Esperança e Admiração",
-        "relacoes": null
+        "relacoes": "Nenhuma registrada"
       },
       "citacao_famosa": "Enquanto o sol brilhar, a justiça também brilhará."
     },
@@ -391,10 +419,10 @@
       "afiliacao_direta": "Império de Mídia da Família Ellen",
       "u_boot": {
         "nome": "Remanescente",
-        "cor_base": null,
-        "led_ativo": null,
-        "modo_arma": null,
-        "transformacoes": null,
+        "cor_base": "Não especificado",
+        "led_ativo": "Não especificado",
+        "modo_arma": "Não especificado",
+        "transformacoes": "Não especificado",
         "habilidade_unica": "Controle eletromagnético completo",
         "poderes": [
           "Controle eletromagnético",
@@ -402,53 +430,60 @@
           "Levitar",
           "Criar tempestades elétricas"
         ],
-        "forma_manifesta": null
+        "forma_manifesta": "Não especificado"
       },
-      "poder_politico": [],
-      "relacoes_com_outros_classe_s": null,
+      "poder_politico": [
+        {
+          "direito": "Nenhum",
+          "descricao": "Nenhum poder político registrado"
+        }
+      ],
+      "relacoes_com_outros_classe_s": {
+        "observacao": "Nenhuma relação registrada"
+      },
       "perfil_emocional_e_heranca": {
-        "avo": null,
-        "resumo": null,
-        "trauma": null,
+        "descendencia": "Não especificado",
+        "resumo": "Não especificado",
+        "trauma": "Nenhum registrado",
         "emocao_dominante": "Desprezo",
-        "trauma_central": null,
-        "trauma_principal": null
+        "trauma_central": "Nenhum registrado",
+        "trauma_principal": "Nenhum registrado"
       },
       "estilo_combate": {
         "ofensiva": "Alta",
         "defensiva": "Moderada",
         "controle_de_campo": "Alto (com levitação)",
-        "desvantagem": null,
-        "foco": null,
-        "mobilidade": null,
-        "defesa": null
+        "desvantagem": "Não especificado",
+        "foco": "Não especificado",
+        "mobilidade": "Não especificado",
+        "defesa": "Não especificado"
       },
       "aparencia_e_postura": {
-        "publica": null,
-        "privada": null
+        "publica": "Não especificado",
+        "privada": "Não especificado"
       },
-      "estetica_e_presenca_em_campo": null,
+      "estetica_e_presenca_em_campo": "Não especificado",
       "historico_de_origem": "Modelo de família rica, nunca quis um U-Boot. Após humilhar um fã obcecado que morreu em missão, o U-Boot dele viajou uma distância recorde para se vincular a ela à força",
       "anomalias_e_segredos": "O U-Boot às vezes age por conta própria para protegê-la, como se a consciência do fã ainda estivesse presente",
-      "metodologia_de_crescimento": null,
-      "presenca_visual_e_comportamento": null,
+      "metodologia_de_crescimento": "Não especificado",
+      "presenca_visual_e_comportamento": "Não especificado",
       "perfil_psicologico_e_emocional": {
         "personalidade": "Arrogante, desdenhosa, com culpa reprimida",
         "emocao_dominante": "Desprezo",
-        "complexo_de_fraqueza": null,
-        "objetivo_secreto": null,
-        "trauma": null,
-        "trauma_central": null,
-        "trauma_principal": null
+        "complexo_de_fraqueza": "Nenhum registrado",
+        "objetivo_secreto": "Nenhum registrado",
+        "trauma": "Nenhum registrado",
+        "trauma_central": "Nenhum registrado",
+        "trauma_principal": "Nenhum registrado"
       },
       "perfil_psicologico_e_interacoes": {
         "personalidade": "Arrogante, desdenhosa, com culpa reprimida",
         "emocao_dominante": "Desprezo",
-        "complexo_de_fraqueza": null
+        "complexo_de_fraqueza": "Nenhum registrado"
       },
       "perfil_psicologico_e_relacoes": {
         "emocao_dominante": "Desprezo",
-        "relacoes": null
+        "relacoes": "Nenhuma registrada"
       },
       "citacao_famosa": "Ter poder não significa que eu tenha que gostar dele. Agora, saia da minha frente."
     },
@@ -464,59 +499,66 @@
       "afiliacao_direta": "Nenhuma. Opera sozinho",
       "u_boot": {
         "nome": "Érebo",
-        "cor_base": null,
-        "led_ativo": null,
+        "cor_base": "Não especificado",
+        "led_ativo": "Não especificado",
         "modo_arma": "Foice colossal que se divide, gera correntes e invoca crânios flutuantes explosivos",
-        "transformacoes": null,
+        "transformacoes": "Não especificado",
         "habilidade_unica": "Foice que se divide e invoca crânios explosivos",
         "poderes": [
           "Foice colossal divisível",
           "Geração de correntes",
           "Invocação de crânios flutuantes explosivos"
         ],
-        "forma_manifesta": null
+        "forma_manifesta": "Não especificado"
       },
-      "poder_politico": [],
-      "relacoes_com_outros_classe_s": null,
+      "poder_politico": [
+        {
+          "direito": "Nenhum",
+          "descricao": "Nenhum poder político registrado"
+        }
+      ],
+      "relacoes_com_outros_classe_s": {
+        "observacao": "Nenhuma relação registrada"
+      },
       "perfil_emocional_e_heranca": {
-        "avo": null,
-        "resumo": null,
-        "trauma": null,
+        "descendencia": "Não especificado",
+        "resumo": "Não especificado",
+        "trauma": "Nenhum registrado",
         "emocao_dominante": "Raiva reprimida e Apatia",
-        "trauma_central": null,
+        "trauma_central": "Nenhum registrado",
         "trauma_principal": "A aniquilação de seu lar"
       },
       "estilo_combate": {
         "ofensiva": "Extrema",
         "defensiva": "Alta (baseada em reflexos)",
         "controle_de_campo": "Impecável",
-        "desvantagem": null,
-        "foco": null,
-        "mobilidade": null,
-        "defesa": null
+        "desvantagem": "Não especificado",
+        "foco": "Não especificado",
+        "mobilidade": "Não especificado",
+        "defesa": "Não especificado"
       },
       "aparencia_e_postura": {
-        "publica": null,
-        "privada": null
+        "publica": "Não especificado",
+        "privada": "Não especificado"
       },
-      "estetica_e_presenca_em_campo": null,
+      "estetica_e_presenca_em_campo": "Não especificado",
       "historico_de_origem": "Único sobrevivente do massacre de sua cidade natal por um exército de monstros. Obteve seu U-Boot de forma misteriosa durante o caos",
-      "anomalias_e_segredos": null,
-      "metodologia_de_crescimento": null,
-      "presenca_visual_e_comportamento": null,
+      "anomalias_e_segredos": "Nenhum registrado",
+      "metodologia_de_crescimento": "Não especificado",
+      "presenca_visual_e_comportamento": "Não especificado",
       "perfil_psicologico_e_emocional": {
         "personalidade": "Focado, determinado, com raiva reprimida",
         "emocao_dominante": "Raiva reprimida e Apatia",
-        "complexo_de_fraqueza": null,
-        "objetivo_secreto": null,
-        "trauma": null,
-        "trauma_central": null,
+        "complexo_de_fraqueza": "Nenhum registrado",
+        "objetivo_secreto": "Nenhum registrado",
+        "trauma": "Nenhum registrado",
+        "trauma_central": "Nenhum registrado",
         "trauma_principal": "A aniquilação de seu lar"
       },
       "perfil_psicologico_e_interacoes": {
         "personalidade": "Focado, determinado, com raiva reprimida",
         "emocao_dominante": "Raiva reprimida e Apatia",
-        "complexo_de_fraqueza": null
+        "complexo_de_fraqueza": "Nenhum registrado"
       },
       "perfil_psicologico_e_relacoes": {
         "emocao_dominante": "Raiva reprimida e Apatia",
@@ -536,59 +578,66 @@
       "afiliacao_direta": "Clã do Norte",
       "u_boot": {
         "nome": "Muspelheim",
-        "cor_base": null,
-        "led_ativo": null,
+        "cor_base": "Não especificado",
+        "led_ativo": "Não especificado",
         "modo_arma": "Espada de duas mãos que esquenta a cada golpe, podendo derreter o chão e causar explosões de magma",
-        "transformacoes": null,
+        "transformacoes": "Não especificado",
         "habilidade_unica": "Espada que esquenta progressivamente e gera explosões de magma",
         "poderes": [
           "Espada de duas mãos que esquenta a cada golpe",
           "Derrete o chão",
           "Causa explosões de magma"
         ],
-        "forma_manifesta": null
+        "forma_manifesta": "Não especificado"
       },
-      "poder_politico": [],
-      "relacoes_com_outros_classe_s": null,
+      "poder_politico": [
+        {
+          "direito": "Nenhum",
+          "descricao": "Nenhum poder político registrado"
+        }
+      ],
+      "relacoes_com_outros_classe_s": {
+        "observacao": "Nenhuma relação registrada"
+      },
       "perfil_emocional_e_heranca": {
-        "avo": null,
-        "resumo": null,
-        "trauma": null,
+        "descendencia": "Não especificado",
+        "resumo": "Não especificado",
+        "trauma": "Nenhum registrado",
         "emocao_dominante": "Fúria de Batalha",
-        "trauma_central": null,
-        "trauma_principal": null
+        "trauma_central": "Nenhum registrado",
+        "trauma_principal": "Nenhum registrado"
       },
       "estilo_combate": {
         "ofensiva": "Extrema",
         "defensiva": "Baixa",
         "controle_de_campo": "Moderado (baseado em dano)",
-        "desvantagem": null,
-        "foco": null,
-        "mobilidade": null,
-        "defesa": null
+        "desvantagem": "Não especificado",
+        "foco": "Não especificado",
+        "mobilidade": "Não especificado",
+        "defesa": "Não especificado"
       },
       "aparencia_e_postura": {
-        "publica": null,
-        "privada": null
+        "publica": "Não especificado",
+        "privada": "Não especificado"
       },
-      "estetica_e_presenca_em_campo": null,
-      "historico_de_origem": null,
-      "anomalias_e_segredos": null,
-      "metodologia_de_crescimento": null,
-      "presenca_visual_e_comportamento": null,
+      "estetica_e_presenca_em_campo": "Não especificado",
+      "historico_de_origem": "Não especificado",
+      "anomalias_e_segredos": "Nenhum registrado",
+      "metodologia_de_crescimento": "Não especificado",
+      "presenca_visual_e_comportamento": "Não especificado",
       "perfil_psicologico_e_emocional": {
         "personalidade": "Impulsivo, competitivo, sedento por batalhas",
         "emocao_dominante": "Fúria de Batalha",
-        "complexo_de_fraqueza": null,
-        "objetivo_secreto": null,
-        "trauma": null,
-        "trauma_central": null,
-        "trauma_principal": null
+        "complexo_de_fraqueza": "Nenhum registrado",
+        "objetivo_secreto": "Nenhum registrado",
+        "trauma": "Nenhum registrado",
+        "trauma_central": "Nenhum registrado",
+        "trauma_principal": "Nenhum registrado"
       },
       "perfil_psicologico_e_interacoes": {
         "personalidade": "Impulsivo, competitivo, sedento por batalhas",
         "emocao_dominante": "Fúria de Batalha",
-        "complexo_de_fraqueza": null
+        "complexo_de_fraqueza": "Nenhum registrado"
       },
       "perfil_psicologico_e_relacoes": {
         "emocao_dominante": "Fúria de Batalha",
@@ -608,58 +657,65 @@
       "afiliacao_direta": "Clã do Norte (Líder)",
       "u_boot": {
         "nome": "As Manoplas Solares",
-        "cor_base": null,
-        "led_ativo": null,
+        "cor_base": "Não especificado",
+        "led_ativo": "Não especificado",
         "modo_arma": "Manoplas que esquentam a cada golpe e lançam rajadas de ar superaquecido",
-        "transformacoes": null,
+        "transformacoes": "Não especificado",
         "habilidade_unica": "Manoplas que geram calor progressivo e rajadas de ar superaquecido",
         "poderes": [
           "Manoplas que esquentam a cada golpe",
           "Lança rajadas de ar superaquecido"
         ],
-        "forma_manifesta": null
+        "forma_manifesta": "Não especificado"
       },
-      "poder_politico": [],
-      "relacoes_com_outros_classe_s": null,
+      "poder_politico": [
+        {
+          "direito": "Nenhum",
+          "descricao": "Nenhum poder político registrado"
+        }
+      ],
+      "relacoes_com_outros_classe_s": {
+        "observacao": "Nenhuma relação registrada"
+      },
       "perfil_emocional_e_heranca": {
-        "avo": null,
-        "resumo": null,
-        "trauma": null,
+        "descendencia": "Não especificado",
+        "resumo": "Não especificado",
+        "trauma": "Nenhum registrado",
         "emocao_dominante": "Disciplina",
-        "trauma_central": null,
-        "trauma_principal": null
+        "trauma_central": "Nenhum registrado",
+        "trauma_principal": "Nenhum registrado"
       },
       "estilo_combate": {
         "ofensiva": "Alta e Precisa",
         "defensiva": "Extrema",
         "controle_de_campo": "Alto",
-        "desvantagem": null,
-        "foco": null,
-        "mobilidade": null,
-        "defesa": null
+        "desvantagem": "Não especificado",
+        "foco": "Não especificado",
+        "mobilidade": "Não especificado",
+        "defesa": "Não especificado"
       },
       "aparencia_e_postura": {
-        "publica": null,
-        "privada": null
+        "publica": "Não especificado",
+        "privada": "Não especificado"
       },
-      "estetica_e_presenca_em_campo": null,
-      "historico_de_origem": null,
-      "anomalias_e_segredos": null,
-      "metodologia_de_crescimento": null,
-      "presenca_visual_e_comportamento": null,
+      "estetica_e_presenca_em_campo": "Não especificado",
+      "historico_de_origem": "Não especificado",
+      "anomalias_e_segredos": "Nenhum registrado",
+      "metodologia_de_crescimento": "Não especificado",
+      "presenca_visual_e_comportamento": "Não especificado",
       "perfil_psicologico_e_emocional": {
         "personalidade": "Calmo, disciplinado, sábio",
         "emocao_dominante": "Disciplina",
-        "complexo_de_fraqueza": null,
-        "objetivo_secreto": null,
-        "trauma": null,
-        "trauma_central": null,
-        "trauma_principal": null
+        "complexo_de_fraqueza": "Nenhum registrado",
+        "objetivo_secreto": "Nenhum registrado",
+        "trauma": "Nenhum registrado",
+        "trauma_central": "Nenhum registrado",
+        "trauma_principal": "Nenhum registrado"
       },
       "perfil_psicologico_e_interacoes": {
         "personalidade": "Calmo, disciplinado, sábio",
         "emocao_dominante": "Disciplina",
-        "complexo_de_fraqueza": null
+        "complexo_de_fraqueza": "Nenhum registrado"
       },
       "perfil_psicologico_e_relacoes": {
         "emocao_dominante": "Disciplina",
