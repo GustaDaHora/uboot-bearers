@@ -31,7 +31,7 @@ interface PoderPolitico {
 }
 
 interface PerfilEmocional {
-  avo?: string | null;
+  descendencia?: string;
   resumo?: string | null;
   trauma?: string | null;
   emocao_dominante?: string;
@@ -47,6 +47,17 @@ interface PerfilPsicologico {
   trauma?: string | null;
   trauma_central?: string | null;
   trauma_principal?: string | null;
+}
+
+interface PerfilPsicologicoInteracoes {
+  personalidade?: string;
+  emocao_dominante?: string;
+  complexo_de_fraqueza?: string | null;
+}
+
+interface PerfilPsicologicoRelacoes {
+  emocao_dominante?: string;
+  relacoes?: string;
 }
 
 interface AparenciaPostura {
@@ -66,7 +77,7 @@ interface ClasseSMember {
   afiliacao_direta?: string;
   u_boot: UBoot;
   poder_politico?: PoderPolitico[];
-  relacoes_com_outros_classe_s?: Record<string, unknown> | null;
+  relacoes_com_outros_classe_s?: Record<string, string> | null;
   perfil_emocional_e_heranca?: PerfilEmocional;
   estilo_combate: EstiloCombate;
   aparencia_e_postura?: AparenciaPostura;
@@ -76,8 +87,8 @@ interface ClasseSMember {
   metodologia_de_crescimento?: string | null;
   presenca_visual_e_comportamento?: string | null;
   perfil_psicologico_e_emocional?: PerfilPsicologico;
-  perfil_psicologico_e_interacoes?: PerfilPsicologico;
-  perfil_psicologico_e_relacoes?: Record<string, unknown>;
+  perfil_psicologico_e_interacoes?: PerfilPsicologicoInteracoes;
+  perfil_psicologico_e_relacoes?: PerfilPsicologicoRelacoes;
   citacao_famosa: string;
 }
 
@@ -167,30 +178,76 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character, index }) => {
 
       {/* Informações Principais */}
       <div className="p-6">
-        <div className="mb-8 grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
-          {/* U-Boot Info */}
+        <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           <div className="rounded-xl border border-cyan-500/30 bg-gradient-to-br from-cyan-900/20 to-blue-900/20 p-4">
-            <h3 className="mb-4 flex items-center text-xl font-bold text-cyan-400">
-              <span className="mr-3 h-3 w-3 animate-pulse rounded-full bg-cyan-400" />
+            <h3 className="mb-4 text-xl font-bold text-cyan-400">
+              Informações
+            </h3>
+            <div className="space-y-2 text-sm">
+              <p>
+                <span className="font-semibold text-gray-400">Nível: </span>
+                {character.nivel_confirmado}
+              </p>
+              <p>
+                <span className="font-semibold text-gray-400">Status: </span>
+                {character.status_emocional}
+              </p>
+              <p>
+                <span className="font-semibold text-gray-400">Função: </span>
+                {character.funcao_estrategica}
+              </p>
+              <p>
+                <span className="font-semibold text-gray-400">
+                  Residência:{' '}
+                </span>
+                {character.residencia}
+              </p>
+              <p>
+                <span className="font-semibold text-gray-400">Afiliação: </span>
+                {character.afiliacao_direta}
+              </p>
+            </div>
+          </div>
+
+          {/* U-Boot Info */}
+          <div className="rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-900/20 to-blue-900/20 p-4">
+            <h3 className="mb-4 flex items-center text-xl font-bold text-purple-400">
+              <span className="mr-3 h-3 w-3 animate-pulse rounded-full bg-purple-400" />
               U-BOOT: {character.u_boot.nome}
             </h3>
-            <div className="space-y-3">
-              {character.u_boot.cor_base && (
-                <div>
-                  <span className="text-sm text-gray-400">Cor Base:</span>
-                  <p className="text-sm text-white">{character.residencia}</p>
-                </div>
+            <div className="space-y-2 text-sm">
+              {character.u_boot.cor_base &&
+                character.u_boot.cor_base !== 'Não especificado' && (
+                  <p>
+                    <span className="font-semibold text-gray-400">Cor: </span>
+                    {character.u_boot.cor_base}
+                  </p>
+                )}
+              {character.u_boot.led_ativo &&
+                character.u_boot.led_ativo !== 'Não especificado' && (
+                  <p>
+                    <span className="font-semibold text-gray-400">LED: </span>
+                    {character.u_boot.led_ativo}
+                  </p>
+                )}
+              {character.u_boot.habilidade_unica && (
+                <p>
+                  <span className="font-semibold text-gray-400">
+                    Habilidade Única:{' '}
+                  </span>
+                  {character.u_boot.habilidade_unica}
+                </p>
               )}
             </div>
           </div>
 
           {/* Combate */}
-          <div className="rounded-xl border border-red-500/30 bg-gradient-to-br from-red-900/20 to-pink-900/20 p-4 lg:col-span-2 xl:col-span-1">
+          <div className="rounded-xl border border-red-500/30 bg-gradient-to-br from-red-900/20 to-pink-900/20 p-4 md:col-span-2 lg:col-span-1">
             <h3 className="mb-4 flex items-center text-xl font-bold text-red-400">
               <span className="mr-3 h-3 w-3 animate-pulse rounded-full bg-red-400" />
               COMBATE
             </h3>
-            <div className="space-y-3">
+            <div className="space-y-1">
               <StatBar
                 label="Ofensiva"
                 value={character.estilo_combate.ofensiva || 'N/A'}
@@ -203,12 +260,36 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character, index }) => {
                 label="Controle"
                 value={character.estilo_combate.controle_de_campo || 'N/A'}
               />
-              {character.estilo_combate.mobilidade && (
-                <StatBar
-                  label="Mobilidade"
-                  value={character.estilo_combate.mobilidade}
-                />
-              )}
+              {character.estilo_combate.mobilidade &&
+                character.estilo_combate.mobilidade !== 'Não especificado' && (
+                  <StatBar
+                    label="Mobilidade"
+                    value={character.estilo_combate.mobilidade}
+                  />
+                )}
+              {character.estilo_combate.defesa &&
+                character.estilo_combate.defesa !== 'Não especificado' && (
+                  <StatBar
+                    label="Defesa"
+                    value={character.estilo_combate.defesa}
+                  />
+                )}
+              {character.estilo_combate.foco &&
+                character.estilo_combate.foco !== 'Não especificado' && (
+                  <p className="text-sm">
+                    <span className="font-semibold text-gray-400">Foco: </span>
+                    {character.estilo_combate.foco}
+                  </p>
+                )}
+              {character.estilo_combate.desvantagem &&
+                character.estilo_combate.desvantagem !== 'Não especificado' && (
+                  <p className="text-sm">
+                    <span className="font-semibold text-gray-400">
+                      Desvantagem:{' '}
+                    </span>
+                    {character.estilo_combate.desvantagem}
+                  </p>
+                )}
             </div>
           </div>
         </div>
@@ -235,41 +316,44 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character, index }) => {
             <div
               className={`overflow-hidden transition-all duration-500 ease-in-out ${
                 expandedSections[`uboot-${index}`]
-                  ? 'max-h-96 opacity-100'
+                  ? 'max-h-[500px] opacity-100'
                   : 'max-h-0 opacity-0'
               }`}
             >
-              <div className="space-y-3 p-4 pt-0">
-                {character.u_boot.modo_arma && (
-                  <div>
-                    <span className="text-sm font-medium text-purple-300">
-                      Modo Arma:
-                    </span>
-                    <p className="leading-relaxed text-gray-300">
-                      {character.u_boot.modo_arma}
-                    </p>
-                  </div>
-                )}
-                {character.u_boot.transformacoes && (
-                  <div>
-                    <span className="text-sm font-medium text-purple-300">
-                      Transformações:
-                    </span>
-                    <p className="text-gray-300">
-                      {character.u_boot.transformacoes}
-                    </p>
-                  </div>
-                )}
-                {character.u_boot.forma_manifesta && (
-                  <div>
-                    <span className="text-sm font-medium text-purple-300">
-                      Forma Manifesta:
-                    </span>
-                    <p className="text-gray-300">
-                      {character.u_boot.forma_manifesta}
-                    </p>
-                  </div>
-                )}
+              <div className="space-y-4 p-4 pt-0">
+                {character.u_boot.modo_arma &&
+                  character.u_boot.modo_arma !== 'Não especificado' && (
+                    <div>
+                      <span className="text-sm font-medium text-purple-300">
+                        Modo Arma:
+                      </span>
+                      <p className="leading-relaxed text-gray-300">
+                        {character.u_boot.modo_arma}
+                      </p>
+                    </div>
+                  )}
+                {character.u_boot.transformacoes &&
+                  character.u_boot.transformacoes !== 'Não especificado' && (
+                    <div>
+                      <span className="text-sm font-medium text-purple-300">
+                        Transformações:
+                      </span>
+                      <p className="text-gray-300">
+                        {character.u_boot.transformacoes}
+                      </p>
+                    </div>
+                  )}
+                {character.u_boot.forma_manifesta &&
+                  character.u_boot.forma_manifesta !== 'Não especificado' && (
+                    <div>
+                      <span className="text-sm font-medium text-purple-300">
+                        Forma Manifesta:
+                      </span>
+                      <p className="text-gray-300">
+                        {character.u_boot.forma_manifesta}
+                      </p>
+                    </div>
+                  )}
                 {character.u_boot.poderes &&
                   character.u_boot.poderes.length > 0 && (
                     <div>
@@ -294,18 +378,64 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character, index }) => {
           </div>
 
           {/* Poder Político */}
-          {character.poder_politico && character.poder_politico.length > 0 && (
-            <div className="overflow-hidden rounded-xl border border-yellow-500/30 bg-gradient-to-br from-yellow-900/20 to-orange-900/20">
+          {character.poder_politico &&
+            character.poder_politico.length > 0 &&
+            character.poder_politico[0].direito !== 'Nenhum' && (
+              <div className="overflow-hidden rounded-xl border border-yellow-500/30 bg-gradient-to-br from-yellow-900/20 to-orange-900/20">
+                <button
+                  onClick={() => toggleSection(`political-${index}`)}
+                  className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-yellow-500/10"
+                >
+                  <span className="text-lg font-semibold text-yellow-300">
+                    Poder Político
+                  </span>
+                  <span
+                    className={`transform transition-transform duration-300 ${
+                      expandedSections[`political-${index}`] ? 'rotate-180' : ''
+                    }`}
+                  >
+                    ▼
+                  </span>
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                    expandedSections[`political-${index}`]
+                      ? 'max-h-96 opacity-100'
+                      : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="space-y-3 p-4 pt-0">
+                    {character.poder_politico.map((power, idx) => (
+                      <div
+                        key={idx}
+                        className="border-l-2 border-yellow-500/30 pl-3"
+                      >
+                        <div className="font-semibold text-yellow-300">
+                          {power.direito}
+                        </div>
+                        <p className="text-sm text-gray-300">
+                          {power.descricao}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+          {/* Relações */}
+          {character.relacoes_com_outros_classe_s && (
+            <div className="overflow-hidden rounded-xl border border-green-500/30 bg-gradient-to-br from-green-900/20 to-cyan-900/20">
               <button
-                onClick={() => toggleSection(`political-${index}`)}
-                className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-yellow-500/10"
+                onClick={() => toggleSection(`relations-${index}`)}
+                className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-green-500/10"
               >
-                <span className="text-lg font-semibold text-yellow-300">
-                  Poder Político
+                <span className="text-lg font-semibold text-green-300">
+                  Relações
                 </span>
                 <span
                   className={`transform transition-transform duration-300 ${
-                    expandedSections[`political-${index}`] ? 'rotate-180' : ''
+                    expandedSections[`relations-${index}`] ? 'rotate-180' : ''
                   }`}
                 >
                   ▼
@@ -313,41 +443,40 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character, index }) => {
               </button>
               <div
                 className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  expandedSections[`political-${index}`]
+                  expandedSections[`relations-${index}`]
                     ? 'max-h-96 opacity-100'
                     : 'max-h-0 opacity-0'
                 }`}
               >
                 <div className="space-y-3 p-4 pt-0">
-                  {character.poder_politico.map((power, idx) => (
-                    <div
-                      key={idx}
-                      className="border-l-2 border-yellow-500/30 pl-3"
-                    >
-                      <div className="font-semibold text-yellow-300">
-                        {power.direito}
+                  {Object.entries(character.relacoes_com_outros_classe_s).map(
+                    ([key, value]) => (
+                      <div key={key}>
+                        <span className="text-sm font-medium text-green-300">
+                          {key.replace(/_/g, ' ').toUpperCase()}:
+                        </span>
+                        <p className="text-gray-300">{value}</p>
                       </div>
-                      <p className="text-sm text-gray-300">{power.descricao}</p>
-                    </div>
-                  ))}
+                    ),
+                  )}
                 </div>
               </div>
             </div>
           )}
 
-          {/* Histórico e Origem */}
-          {character.historico_de_origem && (
-            <div className="overflow-hidden rounded-xl border border-indigo-500/30 bg-gradient-to-br from-indigo-900/20 to-purple-900/20">
+          {/* Perfil Emocional e Herança */}
+          {character.perfil_emocional_e_heranca && (
+            <div className="overflow-hidden rounded-xl border border-blue-500/30 bg-gradient-to-br from-blue-900/20 to-indigo-900/20">
               <button
-                onClick={() => toggleSection(`history-${index}`)}
-                className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-indigo-500/10"
+                onClick={() => toggleSection(`heritage-${index}`)}
+                className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-blue-500/10"
               >
-                <span className="text-lg font-semibold text-indigo-300">
-                  Histórico e Origem
+                <span className="text-lg font-semibold text-blue-300">
+                  Perfil Emocional e Herança
                 </span>
                 <span
                   className={`transform transition-transform duration-300 ${
-                    expandedSections[`history-${index}`] ? 'rotate-180' : ''
+                    expandedSections[`heritage-${index}`] ? 'rotate-180' : ''
                   }`}
                 >
                   ▼
@@ -355,22 +484,188 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character, index }) => {
               </button>
               <div
                 className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  expandedSections[`history-${index}`]
+                  expandedSections[`heritage-${index}`]
                     ? 'max-h-96 opacity-100'
                     : 'max-h-0 opacity-0'
                 }`}
               >
-                <div className="p-4 pt-0">
-                  <p className="leading-relaxed text-gray-300">
-                    {character.historico_de_origem}
-                  </p>
+                <div className="space-y-3 p-4 pt-0">
+                  {character.perfil_emocional_e_heranca.descendencia &&
+                    character.perfil_emocional_e_heranca.descendencia !==
+                      'Não especificado' && (
+                      <div>
+                        <span className="text-sm font-medium text-blue-300">
+                          Descendência:
+                        </span>
+                        <p className="text-gray-300">
+                          {character.perfil_emocional_e_heranca.descendencia}
+                        </p>
+                      </div>
+                    )}
+                  {character.perfil_emocional_e_heranca.resumo &&
+                    character.perfil_emocional_e_heranca.resumo !==
+                      'Não especificado' && (
+                      <div>
+                        <span className="text-sm font-medium text-blue-300">
+                          Resumo:
+                        </span>
+                        <p className="text-gray-300">
+                          {character.perfil_emocional_e_heranca.resumo}
+                        </p>
+                      </div>
+                    )}
+                  {character.perfil_emocional_e_heranca.emocao_dominante && (
+                    <div>
+                      <span className="text-sm font-medium text-blue-300">
+                        Emoção Dominante:
+                      </span>
+                      <p className="text-gray-300">
+                        {character.perfil_emocional_e_heranca.emocao_dominante}
+                      </p>
+                    </div>
+                  )}
+                  {character.perfil_emocional_e_heranca.trauma &&
+                    character.perfil_emocional_e_heranca.trauma !==
+                      'Nenhum registrado' && (
+                      <div>
+                        <span className="text-sm font-medium text-blue-300">
+                          Trauma:
+                        </span>
+                        <p className="text-gray-300">
+                          {character.perfil_emocional_e_heranca.trauma}
+                        </p>
+                      </div>
+                    )}
+                  {character.perfil_emocional_e_heranca.trauma_central &&
+                    character.perfil_emocional_e_heranca.trauma_central !==
+                      'Nenhum registrado' && (
+                      <div>
+                        <span className="text-sm font-medium text-blue-300">
+                          Trauma Central:
+                        </span>
+                        <p className="text-gray-300">
+                          {character.perfil_emocional_e_heranca.trauma_central}
+                        </p>
+                      </div>
+                    )}
+                  {character.perfil_emocional_e_heranca.trauma_principal &&
+                    character.perfil_emocional_e_heranca.trauma_principal !==
+                      'Nenhum registrado' && (
+                      <div>
+                        <span className="text-sm font-medium text-blue-300">
+                          Trauma Principal:
+                        </span>
+                        <p className="text-gray-300">
+                          {
+                            character.perfil_emocional_e_heranca
+                              .trauma_principal
+                          }
+                        </p>
+                      </div>
+                    )}
                 </div>
               </div>
             </div>
           )}
 
+          {/* Aparência e Postura */}
+          {character.aparencia_e_postura &&
+            (character.aparencia_e_postura.publica !== 'Não especificado' ||
+              character.aparencia_e_postura.privada !== 'Não especificado') && (
+              <div className="overflow-hidden rounded-xl border border-pink-500/30 bg-gradient-to-br from-pink-900/20 to-rose-900/20">
+                <button
+                  onClick={() => toggleSection(`appearance-${index}`)}
+                  className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-pink-500/10"
+                >
+                  <span className="text-lg font-semibold text-pink-300">
+                    Aparência e Postura
+                  </span>
+                  <span
+                    className={`transform transition-transform duration-300 ${
+                      expandedSections[`appearance-${index}`]
+                        ? 'rotate-180'
+                        : ''
+                    }`}
+                  >
+                    ▼
+                  </span>
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                    expandedSections[`appearance-${index}`]
+                      ? 'max-h-96 opacity-100'
+                      : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="space-y-3 p-4 pt-0">
+                    {character.aparencia_e_postura.publica &&
+                      character.aparencia_e_postura.publica !==
+                        'Não especificado' && (
+                        <div>
+                          <span className="text-sm font-medium text-pink-300">
+                            Pública:
+                          </span>
+                          <p className="text-gray-300">
+                            {character.aparencia_e_postura.publica}
+                          </p>
+                        </div>
+                      )}
+                    {character.aparencia_e_postura.privada &&
+                      character.aparencia_e_postura.privada !==
+                        'Não especificado' && (
+                        <div>
+                          <span className="text-sm font-medium text-pink-300">
+                            Privada:
+                          </span>
+                          <p className="text-gray-300">
+                            {character.aparencia_e_postura.privada}
+                          </p>
+                        </div>
+                      )}
+                  </div>
+                </div>
+              </div>
+            )}
+
+          {/* Histórico e Origem */}
+          {character.historico_de_origem &&
+            character.historico_de_origem !== 'Não especificado' && (
+              <div className="overflow-hidden rounded-xl border border-indigo-500/30 bg-gradient-to-br from-indigo-900/20 to-purple-900/20">
+                <button
+                  onClick={() => toggleSection(`history-${index}`)}
+                  className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-indigo-500/10"
+                >
+                  <span className="text-lg font-semibold text-indigo-300">
+                    Histórico e Origem
+                  </span>
+                  <span
+                    className={`transform transition-transform duration-300 ${
+                      expandedSections[`history-${index}`] ? 'rotate-180' : ''
+                    }`}
+                  >
+                    ▼
+                  </span>
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                    expandedSections[`history-${index}`]
+                      ? 'max-h-96 opacity-100'
+                      : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="p-4 pt-0">
+                    <p className="leading-relaxed text-gray-300">
+                      {character.historico_de_origem}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
           {/* Perfil Psicológico */}
-          {character.perfil_psicologico_e_emocional && (
+          {(character.perfil_psicologico_e_emocional ||
+            character.perfil_psicologico_e_interacoes ||
+            character.perfil_psicologico_e_relacoes) && (
             <div className="overflow-hidden rounded-xl border border-teal-500/30 bg-gradient-to-br from-teal-900/20 to-cyan-900/20">
               <button
                 onClick={() => toggleSection(`psychology-${index}`)}
@@ -390,61 +685,146 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character, index }) => {
               <div
                 className={`overflow-hidden transition-all duration-500 ease-in-out ${
                   expandedSections[`psychology-${index}`]
-                    ? 'max-h-96 opacity-100'
+                    ? 'max-h-[600px] opacity-100'
                     : 'max-h-0 opacity-0'
                 }`}
               >
-                <div className="space-y-3 p-4 pt-0">
-                  {character.perfil_psicologico_e_emocional.personalidade && (
-                    <div>
-                      <span className="text-sm font-medium text-teal-300">
-                        Personalidade:
-                      </span>
-                      <p className="text-gray-300">
-                        {character.perfil_psicologico_e_emocional.personalidade}
-                      </p>
+                <div className="space-y-4 p-4 pt-0">
+                  {character.perfil_psicologico_e_emocional && (
+                    <div className="rounded-lg bg-black/20 p-3">
+                      <h4 className="mb-2 font-semibold text-teal-200">
+                        Emocional
+                      </h4>
+                      <div className="space-y-2 text-sm">
+                        {character.perfil_psicologico_e_emocional
+                          .personalidade && (
+                          <p>
+                            <span className="font-medium text-teal-300">
+                              Personalidade:{' '}
+                            </span>
+                            {
+                              character.perfil_psicologico_e_emocional
+                                .personalidade
+                            }
+                          </p>
+                        )}
+                        {character.perfil_psicologico_e_emocional
+                          .emocao_dominante && (
+                          <p>
+                            <span className="font-medium text-teal-300">
+                              Emoção Dominante:{' '}
+                            </span>
+                            {
+                              character.perfil_psicologico_e_emocional
+                                .emocao_dominante
+                            }
+                          </p>
+                        )}
+                        {character.perfil_psicologico_e_emocional
+                          .complexo_de_fraqueza &&
+                          character.perfil_psicologico_e_emocional
+                            .complexo_de_fraqueza !== 'Nenhum registrado' && (
+                            <p>
+                              <span className="font-medium text-teal-300">
+                                Complexo de Fraqueza:{' '}
+                              </span>
+                              {
+                                character.perfil_psicologico_e_emocional
+                                  .complexo_de_fraqueza
+                              }
+                            </p>
+                          )}
+                        {character.perfil_psicologico_e_emocional
+                          .objetivo_secreto &&
+                          character.perfil_psicologico_e_emocional
+                            .objetivo_secreto !== 'Nenhum registrado' && (
+                            <p>
+                              <span className="font-medium text-teal-300">
+                                Objetivo Secreto:{' '}
+                              </span>
+                              {
+                                character.perfil_psicologico_e_emocional
+                                  .objetivo_secreto
+                              }
+                            </p>
+                          )}
+                      </div>
                     </div>
                   )}
-                  {character.perfil_psicologico_e_emocional
-                    .emocao_dominante && (
-                    <div>
-                      <span className="text-sm font-medium text-teal-300">
-                        Emoção Dominante:
-                      </span>
-                      <p className="text-gray-300">
-                        {
-                          character.perfil_psicologico_e_emocional
-                            .emocao_dominante
-                        }
-                      </p>
+                  {character.perfil_psicologico_e_interacoes && (
+                    <div className="rounded-lg bg-black/20 p-3">
+                      <h4 className="mb-2 font-semibold text-teal-200">
+                        Interações
+                      </h4>
+                      <div className="space-y-2 text-sm">
+                        {character.perfil_psicologico_e_interacoes
+                          .personalidade && (
+                          <p>
+                            <span className="font-medium text-teal-300">
+                              Personalidade:{' '}
+                            </span>
+                            {
+                              character.perfil_psicologico_e_interacoes
+                                .personalidade
+                            }
+                          </p>
+                        )}
+                        {character.perfil_psicologico_e_interacoes
+                          .emocao_dominante && (
+                          <p>
+                            <span className="font-medium text-teal-300">
+                              Emoção Dominante:{' '}
+                            </span>
+                            {
+                              character.perfil_psicologico_e_interacoes
+                                .emocao_dominante
+                            }
+                          </p>
+                        )}
+                        {character.perfil_psicologico_e_interacoes
+                          .complexo_de_fraqueza &&
+                          character.perfil_psicologico_e_interacoes
+                            .complexo_de_fraqueza !== 'Nenhum registrado' && (
+                            <p>
+                              <span className="font-medium text-teal-300">
+                                Complexo de Fraqueza:{' '}
+                              </span>
+                              {
+                                character.perfil_psicologico_e_interacoes
+                                  .complexo_de_fraqueza
+                              }
+                            </p>
+                          )}
+                      </div>
                     </div>
                   )}
-                  {character.perfil_psicologico_e_emocional
-                    .objetivo_secreto && (
-                    <div>
-                      <span className="text-sm font-medium text-teal-300">
-                        Objetivo Secreto:
-                      </span>
-                      <p className="text-gray-300">
-                        {
-                          character.perfil_psicologico_e_emocional
-                            .objetivo_secreto
-                        }
-                      </p>
-                    </div>
-                  )}
-                  {character.perfil_psicologico_e_emocional
-                    .complexo_de_fraqueza && (
-                    <div>
-                      <span className="text-sm font-medium text-teal-300">
-                        Complexo de Fraqueza:
-                      </span>
-                      <p className="text-gray-300">
-                        {
-                          character.perfil_psicologico_e_emocional
-                            .complexo_de_fraqueza
-                        }
-                      </p>
+                  {character.perfil_psicologico_e_relacoes && (
+                    <div className="rounded-lg bg-black/20 p-3">
+                      <h4 className="mb-2 font-semibold text-teal-200">
+                        Relações
+                      </h4>
+                      <div className="space-y-2 text-sm">
+                        {character.perfil_psicologico_e_relacoes
+                          .emocao_dominante && (
+                          <p>
+                            <span className="font-medium text-teal-300">
+                              Emoção Dominante:{' '}
+                            </span>
+                            {
+                              character.perfil_psicologico_e_relacoes
+                                .emocao_dominante
+                            }
+                          </p>
+                        )}
+                        {character.perfil_psicologico_e_relacoes.relacoes && (
+                          <p>
+                            <span className="font-medium text-teal-300">
+                              Relações:{' '}
+                            </span>
+                            {character.perfil_psicologico_e_relacoes.relacoes}
+                          </p>
+                        )}
+                      </div>
                     </div>
                   )}
                 </div>
@@ -453,38 +833,74 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character, index }) => {
           )}
 
           {/* Anomalias e Segredos */}
-          {character.anomalias_e_segredos && (
-            <div className="overflow-hidden rounded-xl border border-rose-500/30 bg-gradient-to-br from-rose-900/20 to-red-900/20">
-              <button
-                onClick={() => toggleSection(`secrets-${index}`)}
-                className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-rose-500/10"
-              >
-                <span className="text-lg font-semibold text-rose-300">
-                  Anomalias e Segredos
-                </span>
-                <span
-                  className={`transform transition-transform duration-300 ${
-                    expandedSections[`secrets-${index}`] ? 'rotate-180' : ''
+          {character.anomalias_e_segredos &&
+            character.anomalias_e_segredos !== 'Nenhum registrado' && (
+              <div className="overflow-hidden rounded-xl border border-rose-500/30 bg-gradient-to-br from-rose-900/20 to-red-900/20">
+                <button
+                  onClick={() => toggleSection(`secrets-${index}`)}
+                  className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-rose-500/10"
+                >
+                  <span className="text-lg font-semibold text-rose-300">
+                    Anomalias e Segredos
+                  </span>
+                  <span
+                    className={`transform transition-transform duration-300 ${
+                      expandedSections[`secrets-${index}`] ? 'rotate-180' : ''
+                    }`}
+                  >
+                    ▼
+                  </span>
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                    expandedSections[`secrets-${index}`]
+                      ? 'max-h-96 opacity-100'
+                      : 'max-h-0 opacity-0'
                   }`}
                 >
-                  ▼
-                </span>
-              </button>
-              <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  expandedSections[`secrets-${index}`]
-                    ? 'max-h-96 opacity-100'
-                    : 'max-h-0 opacity-0'
-                }`}
-              >
-                <div className="p-4 pt-0">
-                  <p className="leading-relaxed text-gray-300">
-                    {character.anomalias_e_segredos}
-                  </p>
+                  <div className="p-4 pt-0">
+                    <p className="leading-relaxed text-gray-300">
+                      {character.anomalias_e_segredos}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
+
+          {/* Metodologia de Crescimento */}
+          {character.metodologia_de_crescimento &&
+            character.metodologia_de_crescimento !== 'Não especificado' && (
+              <div className="overflow-hidden rounded-xl border border-lime-500/30 bg-gradient-to-br from-lime-900/20 to-green-900/20">
+                <button
+                  onClick={() => toggleSection(`growth-${index}`)}
+                  className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-lime-500/10"
+                >
+                  <span className="text-lg font-semibold text-lime-300">
+                    Metodologia de Crescimento
+                  </span>
+                  <span
+                    className={`transform transition-transform duration-300 ${
+                      expandedSections[`growth-${index}`] ? 'rotate-180' : ''
+                    }`}
+                  >
+                    ▼
+                  </span>
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                    expandedSections[`growth-${index}`]
+                      ? 'max-h-96 opacity-100'
+                      : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="p-4 pt-0">
+                    <p className="leading-relaxed text-gray-300">
+                      {character.metodologia_de_crescimento}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
         </div>
 
         {/* Citação Famosa */}
@@ -509,7 +925,7 @@ export default function CompleteClasseSPage() {
   const [animationClass, setAnimationClass] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredCharacters, setFilteredCharacters] = useState(
-    classeSData.classe_s,
+    classeSData.classe_s as unknown as ClasseSMember[],
   );
 
   useEffect(() => {
@@ -521,7 +937,9 @@ export default function CompleteClasseSPage() {
   }, []);
 
   useEffect(() => {
-    const filtered = classeSData.classe_s.filter(
+    const filtered = (
+      classeSData.classe_s as unknown as ClasseSMember[]
+    ).filter(
       (character) =>
         character.nome_operacional
           .toLowerCase()
@@ -618,6 +1036,7 @@ export default function CompleteClasseSPage() {
           <div className="rounded-xl border border-cyan-500/20 bg-slate-900/50 p-6 text-center">
             <div className="mb-2 text-3xl font-bold text-cyan-400">
               {Math.max(
+                0,
                 ...filteredCharacters.map(
                   (c) => parseInt(c.nivel_confirmado) || 0,
                 ),
